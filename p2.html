@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> max number using promise</h1>
+    <script>
+
+function Max_number(a,b,c,d,e) {
+    return new Promise(function(resolve,reject){
+
+        if(typeof a !== "number" ||
+            typeof b !== "number"||
+            typeof c !== "number"||
+            typeof d!== "number" ||
+            typeof e !== "number"
+         ){
+            return reject(new TypeError("Inputs must be numbers"))
+         }
+resolve(Math.max(a,b,c,d,e))
+        })
+    }
+
+let x = Max_number(132,442,543,454,435);
+
+x.then(res => {
+            console.log(`max number =`,res)
+
+        }).catch(err => console.log(err))
+
+
+
+</script>
+</body>
+</html>
+
+
